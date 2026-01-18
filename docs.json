@@ -16,7 +16,10 @@
           {
             "group": "Getting Started",
             "pages": [
-              "index"
+              "index",
+              "setting-up-conduit/set-up-your-workspace",
+              "setting-up-conduit/inbox-contacts",
+              "setting-up-conduit/custom-fields"
             ]
           },
           {
@@ -28,11 +31,8 @@
             ]
           },
           {
-            "group": "Setting up Conduit",
+            "group": "Connect Channels",
             "pages": [
-              "setting-up-conduit/set-up-your-workspace",
-              "setting-up-conduit/inbox-contacts",
-              "setting-up-conduit/custom-fields",
               "setting-up-conduit/connect-phone-and-sms",
               "setting-up-conduit/connect-voiceai-ai-number",
               {
@@ -51,8 +51,13 @@
                   "setting-up-conduit/connect-email/alternate-email-addresses"
                 ]
               },
+              "setting-up-conduit/connect-widget"
+            ]
+          },
+          {
+            "group": "Integrations & Settings",
+            "pages": [
               "setting-up-conduit/connect-pms",
-              "setting-up-conduit/connect-widget",
               "setting-up-conduit/connect-slack",
               "setting-up-conduit/integrations",
               "setting-up-conduit/notifications",
