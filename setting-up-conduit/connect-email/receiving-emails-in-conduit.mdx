@@ -1,0 +1,30 @@
+---
+title: "Receiving Emails in Conduit"
+description: "Set up email forwarding to receive your company emails directly in your Conduit inbox"
+---
+
+## Overview
+
+The system allows you to forward emails from company addresses (like bookings@avantstays.com) to your Conduit inbound address, centralizing conversations for easier tracking and response management. It works with Google Workspace, Microsoft 365, and other email providers.
+
+## Setup Requirements
+
+You need an inbound email address ending in "@inbound.postmark.app" found under **Settings > Email** in your workspace.
+
+## Step-by-Step Instructions
+
+1. Navigate to Settings > Connected Channels > Email
+2. Add your business domain email
+3. Go to Gmail routing configuration
+4. Add a new rule under Default routing
+5. Select "Single recipient" and enter your support email
+6. Check "Change envelope recipient"
+7. Choose either "Replace recipient" or "Also deliver to"
+8. Set members the rule applies to
+9. Click Save
+
+## Important Notes
+
+- The guide assumes Google Workspace usage but provides alternatives (DNSimple, Microsoft 365)
+- Two delivery options: "Replace recipient" (Conduit only) vs. "Also deliver to" (multiple destinations)
+- Existing routing rules may conflict; reorder Conduit rules to apply first

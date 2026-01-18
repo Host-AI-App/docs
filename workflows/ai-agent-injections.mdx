@@ -1,0 +1,63 @@
+---
+title: "AI Agent Injections"
+description: "Create an AI-powered agent to collect information or perform an action"
+---
+
+## Overview
+
+Agent Injection enables users to construct custom AI agents within workflows that function as team members in conversations, powered by Conduit's AI infrastructure.
+
+<Note>
+  **Key capability:** Works with both text and VoiceAI channels.
+</Note>
+
+### Use Cases
+
+The node supports three primary scenarios:
+
+- Guide users through multi-step processes
+- Collect missing information from contacts
+- Execute repeated follow-ups until objectives are achieved
+
+Users maintain full control over agent tone, logic, and follow-through behaviors.
+
+## Implementation Steps
+
+<Steps>
+  <Step title="Initial Setup">
+    Navigate to your workspace, create a trigger, then select **Add Action** > **Agent Injection** (or **Agent Injection Phone** for voice).
+  </Step>
+
+  <Step title="Agent Identity">
+    Assign a recognizable name (example: "Carl from Conduit") to establish agent personality.
+  </Step>
+
+  <Step title="Agent Description">
+    Define behavioral guidelines with a concise prompt such as: "You are Alex, a friendly customer support representative."
+  </Step>
+
+  <Step title="Role Selection">
+    Choose one of two modes:
+    - **Action**: Persuade users toward specific outcomes (booking confirmations, form uploads)
+    - **Information**: Extract particular data points (delivery ETAs)
+  </Step>
+
+  <Step title="Task Configuration">
+    - Write detailed instructions covering tone, constraints, and fallback protocols
+    - Set follow-up frequency and intervals for retry attempts
+  </Step>
+
+  <Step title="First Message">
+    Configure initial outreach by selecting:
+    - Communication channel (Email, SMS, WhatsApp)
+    - Sender identity
+    - Subject line (email only)
+    - Message body with optional dynamic variables (e.g., `{{guest.first_name}}`)
+
+    Once deployed, the AI manages subsequent replies until task completion or follow-up limits are reached.
+  </Step>
+</Steps>
+
+<Info>
+  **Important Note:** Agent Injection works across multiple inboxes with format-adaptive behavior adjustments.
+</Info>

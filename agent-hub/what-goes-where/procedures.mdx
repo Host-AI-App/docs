@@ -1,0 +1,114 @@
+---
+title: "Procedures"
+description: "A guide to writing Procedures"
+---
+
+# Procedures
+
+Procedures instruct the AI "how to answer the customer," not what internal actions to perform. Each procedure follows the pattern: "When a guest asks ... if ... then ..."
+
+## Procedure Patterns
+
+| Pattern | Description | When to Use |
+|---------|-------------|-------------|
+| Single If-Then (Binary Rule) | One condition, one response | Simple, clear-cut scenarios |
+| Multi-Tree Rule | Several if branches beneath one trigger | Multiple possible conditions/outcomes |
+| Workflow-Style Rule | Step-by-step guidance with checks in sequence | Troubleshooting or multi-step support flows |
+| Templated Response Rule | Picks a ready-made reply template based on conditions | Fast, consistent messaging with variables |
+
+### Key Points
+
+1. Focus on the reply—describe what the AI should "say" or whether it should "escalate" to human staff
+2. Stay conditional—use clear "if" clauses so the AI knows when to apply rules
+3. Keep each rule self-contained—no need to reference other Procedures
+
+## Where to Find Procedures
+
+Navigate to: **Agent Hub > Wiki > Procedures**
+
+Define conditions and instructions that guide AI responses based on message type, reservation details, or other triggers. All Procedures apply only to the selected inbox.
+
+## Procedure Templates
+
+Conduit offers preset templates for common procedures by industry. Users can fully customize templates in their workspace.
+
+**To find Procedure templates:**
+1. Navigate to Agent Hub > Knowledge > Wiki > Procedures > Add Procedure
+2. Select "Import template" and choose from Conduit's predefined procedures
+
+## Good vs Bad Procedures
+
+### Example 1 - Condition Clarity
+
+**Bad:** "If needed, let the guest check out late"—AI doesn't understand "needed"
+
+**Good:** "If a guest requests late check-out and no new guest arrives same day, approve until 13:00"
+
+### Example 2 - Guest-Focused Replies
+
+**Bad:** "If guest reports damage, notify operations manager and create task"—AI cannot perform back-office actions
+
+**Good:** "If guest reports damage, thank them and confirm team has been informed"
+
+### Example 3 - Conditional Statements
+
+**Bad:** "Offer 20% discount for repeat guests"—no context for when to use
+
+**Good:** "If guest mentions prior stays, offer 20% discount on next booking"
+
+### Example 4 - Knowledge vs Procedures
+
+**Bad in Procedures:** "Pets are not allowed"—static policy, belongs in Knowledge
+
+**Good:** "If guest brings dog and it's certified service animal, explain exception"
+
+### Example 5 - Guardrails vs Procedures
+
+**Vague:** "Do not disclose pricing differences"—permanent restriction
+
+**Procedure:** "If guest asks why price differs elsewhere, explain platform variations"
+
+**Guardrail:** "Never mention platform price differences in communications"
+
+### Example 6 - Outcome Clarity
+
+**Bad:** "If apartment is cold, fix heating"—no guest-facing instruction
+
+**Good:** "If guest says too cold, ask if windows closed/thermostat above 21C, then alert team if unresolved"
+
+### Example 7 - Verifiable Conditions
+
+**Bad:** "If guest requests early check-in and cleaners are done, allow it"—AI can't verify real-time cleaning status
+
+**Good:** "If guest requests early check-in, confirm you'll check with cleaning team and notify when ready"
+
+## How the Reasoning Engine Uses Your Procedures
+
+The processing steps are:
+
+1. Engine reads all Procedures and matches "if" conditions against reservation data and chat context
+2. Performs time/price calculations (e.g., "hours until arrival," "percentage refund")
+3. Drafts reply following chosen policy, applies Style, and passes through Guardrails before sending
+
+## FAQ
+
+### What information can I refer to in Procedures?
+
+Reference reservation details (dates, payment status, guest count), chat history, Knowledge base, and calendar availability. More data sources coming soon.
+
+### When should I use templated replies?
+
+Use carefully and only when exact wording is mandatory. These responses are sent verbatim, requiring very precise "if conditions" to prevent misuse.
+
+**Key considerations:**
+- Use only when specific wording is legally/policy-required
+- Include detailed context for when template should/shouldn't be used
+- Provide clear "if conditions" that must be met
+- Consider adding fallback options
+
+**Example well-defined templated rule:**
+"If guest requests VAT invoice AND completed stay AND paid in full, use template: 'Thank you for requesting VAT invoice. I'll prepare within 24 hours. Please confirm company details: company name, address, VAT number.'"
+
+### How do I test that the AI follows a Procedure?
+
+Open Sandbox, adjust reservation details in Settings, impersonate the guest, send the triggering question, and verify the reply.

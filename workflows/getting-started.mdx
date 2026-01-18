@@ -1,0 +1,82 @@
+---
+title: "Getting Started"
+description: "Power deep automation in Conduit with workflows"
+---
+
+![Getting Started with Workflows](https://docs.conduit.ai/~gitbook/image?url=https%3A%2F%2F3087193778-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FZ6uQdjE6TRFcfyZZ3wvX%252Fuploads%252F6UXt4VQ7fvX9pH1xI4MB%252FGetting%2520Started%2520with%2520Workflows.png)
+
+## Overview
+
+Workflows enable users to build customized automations that save time, maintain consistency, and scale operations. Whether routing messages to appropriate team members, sending automated replies, or integrating AI into key processes, workflows provide control over support flow.
+
+## What are workflows?
+
+Workflows are visual automations you can create directly in Conduit. Each one runs based on a trigger — like a new message or tag — and follows a sequence of actions.
+
+**Use cases:**
+
+- Escalate or reassign conversations based on topic or urgency
+- Send follow-up messages or notifications after a delay
+- Inject an AI Agent into guest conversations
+- Automatically sync tasks to Slack, email, or other systems
+
+## Automate your conversational flows
+
+### Building Blocks
+
+<AccordionGroup>
+  <Accordion title="Triggers">
+    The event that starts the workflow:
+    - A message received
+    - A new reservation
+    - A tag applied to a conversation
+  </Accordion>
+
+  <Accordion title="Actions">
+    The steps your workflow takes after triggering:
+    - Send a templated reply
+    - Reassign a conversation
+    - Notify a teammate
+    - Wait for a delay
+    - Inject AI
+  </Accordion>
+
+  <Accordion title="Conditions & Paths">
+    Logic determining which branch to follow:
+    - "If the guest is checking in today..."
+    - "If the tag is 'broken appliance'..."
+  </Accordion>
+
+  <Accordion title="Variables">
+    Dynamic values for messages or logic:
+    - `{{guest.first_name}}`
+    - `{{check_in_date}}`
+  </Accordion>
+</AccordionGroup>
+
+## Actions
+
+When you build out workflows, actions can follow triggers or other actions.
+
+<CardGroup cols={2}>
+  <Card title="Message" icon="message">
+    Send Slack, SMS, Email messages to team or external customers
+  </Card>
+  <Card title="AI" icon="robot">
+    Actions using AI to process incoming calls or messages and retrieve information
+  </Card>
+  <Card title="Workspace" icon="users">
+    Assigns team members tasks or updates contact information
+  </Card>
+  <Card title="Controls" icon="clock">
+    Time-based delays or conditions for task execution
+  </Card>
+</CardGroup>
+
+**Action examples:**
+
+- Send a templated reply
+- Reassign a conversation
+- Notify a teammate
+- Wait for a delay
+- Inject AI into a conversation

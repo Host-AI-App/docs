@@ -1,0 +1,36 @@
+---
+title: "Sending Emails from Conduit"
+description: "Set up email sending to respond using official company email addresses within Conduit's unified inbox."
+---
+
+## Overview
+
+Setting up email sending allows your support team to respond using official company email addresses within Conduit's unified inbox. This centralizes communication across multiple channels including PMS, SMS, WhatsApp, and chat in one location.
+
+The setup involves adding DNS records for authentication. DKIM records verify you as the legitimate sender, while return path records handle bounced emails. Together, these ensure messages reach inboxes rather than spam folders.
+
+## Set Up Instructions
+
+To send emails from Conduit, add DNS records to your domain. The process varies slightly by provider but follows the same general steps:
+
+1. Access your domain's DNS settings
+2. Add a TXT record with the DKIM authentication details
+3. Add a CNAME record for the return path
+4. Save and allow propagation time (typically under 10 minutes, occasionally up to 48 hours)
+
+## Supported Providers
+
+Instructions are provided for:
+
+- **DNS Simple**: Access dashboard, select domain, navigate to DNS records, add TXT and CNAME records
+- **Google Domains**: Go to registrar, manage domain, access custom records, create new TXT and CNAME records
+- **NameCheap**: Visit domains list, manage domain, use Advanced DNS tab, add new records
+- **GoDaddy**: Access products, select domain DNS, add TXT and CNAME entries
+
+Each provider requires pasting specific "Hostname" and "Value" information provided during Conduit's setup process.
+
+## Key Points
+
+- DNS changes may take time to propagate
+- Both DKIM and return path records are necessary for optimal deliverability
+- Configuration steps are similar across providers despite interface differences

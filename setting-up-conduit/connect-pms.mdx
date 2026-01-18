@@ -1,0 +1,41 @@
+---
+title: "Connect PMS"
+description: "Connecting to a property management system (hospitality)"
+---
+
+## Overview
+
+Connecting your Property Management System to Conduit enables you to bring property and booking data into the platform. The system automatically creates contacts from reservations and facilitates communication. Conduit integrates with over 15 different PMS systems to populate listing information.
+
+## Setup Steps
+
+The initial configuration process involves four main steps:
+
+1. Navigate to **Settings > Connected Channels > PMS**
+
+   <Note>
+   If PMS isn't visible, create a new workspace and select either **Short Term Rental** or **Long Term Rental** under Advanced settings
+   </Note>
+
+2. Select your business's PMS provider
+
+3. Input your six-digit account ID and API key
+
+4. Your listing will appear under **Agent Hub > Knowledge > Properties**
+
+## Beds24 Connection Instructions
+
+### Part 1: Authentication
+
+1. Access Settings > PMS in HostAI and click the Beds24 logo to reach the authentication screen
+2. Select "Select all" on all three checkboxes, then click "Generate Invite Code"
+3. Copy the invite code and paste it back on the authentication screen
+4. Click "Connect" and wait for the success confirmation message
+
+### Part 2: Messaging Setup
+
+1. Open the Beds24 app and navigate to Settings > Properties > Access
+2. In the Booking Webhooks section, select "2 - with personal data" as the webhook version
+3. Paste the Listener URL from step 1 into the URL field
+4. Leave the Custom Header empty and click "Save"
+5. Repeat this process for each property in your Beds24 account

@@ -1,0 +1,70 @@
+---
+title: "Create a Workflow"
+description: "Build your first automation using the workflow builder"
+---
+
+## Overview
+
+You can build from scratch or use a template to speed things up. Each workflow runs step-by-step, executing the logic you define with dynamic inputs along the way.
+
+## Workflow
+
+### 1. Choose a Starting Point
+
+![Create a Workflow](https://docs.conduit.ai/~gitbook/image?url=https%3A%2F%2F3087193778-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FZ6uQdjE6TRFcfyZZ3wvX%252Fuploads%252FUOzwmDWVKQa1keL4PuJf%252FCreate%2520a%2520Workflow.png)
+
+- Start from a blank canvas for full customization
+- Or select from templates to get a head start on common use cases
+
+### 2. Add a Trigger
+
+![Triggers](https://docs.conduit.ai/~gitbook/image?url=https%3A%2F%2F3087193778-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FZ6uQdjE6TRFcfyZZ3wvX%252Fuploads%252Fa84OCxawsmKY2JtcFmrM%252FTriggers.png)
+
+- Every workflow begins with a trigger (e.g. "Message received" or "Tag added")
+- This determines when the workflow starts and what data is passed into it
+
+### 3. Add Actions and Logic Blocks
+
+![Actions](https://docs.conduit.ai/~gitbook/image?url=https%3A%2F%2F3087193778-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FZ6uQdjE6TRFcfyZZ3wvX%252Fuploads%252Fxzx9qZc4KyrqZdrjy7tk%252FActions.png)
+
+- Hover over your trigger and click the plus icon to add blocks from the action library
+- You can:
+  - Send a reply
+  - Assign a teammate
+  - Add a delay
+  - Inject AI
+  - Notify someone via Slack or email
+  - Branch the logic with conditional paths
+
+### 4. Set Inputs and Variables
+
+![Send message](https://docs.conduit.ai/~gitbook/image?url=https%3A%2F%2F3087193778-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FZ6uQdjE6TRFcfyZZ3wvX%252Fuploads%252FjnV8damG3mUnBNpC2bmE%252FSend%2520message.png)
+
+- Configure each block in the right-hand panel
+- Use variables like `{{guest.first_name}}` or `{{check_in_date}}` to personalize messages or logic based on the data from the trigger
+
+### 5. Publish Your Workflow
+
+- Once it's set up, click **Publish** to activate it
+- You can pause or update a workflow anytime
+
+### 6. Run the Workflow
+
+![Runs](https://docs.conduit.ai/~gitbook/image?url=https%3A%2F%2F3087193778-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FZ6uQdjE6TRFcfyZZ3wvX%252Fuploads%252F7gJYVO51tJoCEav9Zq2L%252FRuns.png)
+
+- **Automatically**, based on the trigger
+- **Manually**, using a "manual run" trigger block
+
+## Notes & Tips
+
+<Tip>
+  **Variables** update dynamically based on the specific message or reservation in each run.
+</Tip>
+
+<Tip>
+  **Deleting or reordering blocks:** Select a block or path and hit backspace to remove; drag connections to rewire logic.
+</Tip>
+
+<Warning>
+  **Permissions:** Some workflows require access to inboxes or integrations like Slack — you'll be prompted if needed.
+</Warning>

@@ -1,0 +1,65 @@
+---
+title: "Inside the AI Engine"
+description: "How Conduit's AI agents think through the Response Flow Pipeline - a five-stage reasoning system that powers AI-generated messages."
+---
+
+The Response Flow Pipeline is the reasoning core behind every AI-generated message in Conduit. It takes an incoming conversation, understands what's being asked, gathers the right information, uses the right tools, and either produces a safe, useful reply or routes the message for human follow-up when needed.
+
+## Five-Stage Process
+
+<Steps>
+  <Step title="Query Analysis">
+    Understanding the request in context through:
+    - **Message preparation**: Trimming conversation history
+    - **Context building**: Creating an "analysis scratchpad"
+    - **Classification**: Tagging by topic
+    - **Action routing**: Deciding which tools/agents to run
+  </Step>
+  <Step title="Knowledge Search and Tool Execution">
+    Gathering necessary information via:
+    - **Hybrid search**: Across unstructured and structured sources
+    - **Relevance filtering**: Removing duplicates
+    - **Tool calls**: Executing external functions
+  </Step>
+  <Step title="Agent Injection">
+    Running specialized micro-agents for:
+    - Extracting specific fields from conversations
+    - Drafting follow-up questions when information is missing
+  </Step>
+  <Step title="Reasoning Engine">
+    Combining all context through:
+    - Rules and guardrails analysis
+    - Style guide application
+    - Strategic planning
+  </Step>
+  <Step title="Reflection and Response Generation">
+    Final validation including:
+    - **Reflection checks**: Confidence assessment
+    - **Response generation**: Writing the reply
+    - **Post-processing**: Cleanup and signatures
+  </Step>
+</Steps>
+
+## Key Outcomes
+
+The system ensures the engine:
+
+<AccordionGroup>
+  <Accordion title="Understands questions before answering">
+    Query analysis ensures the AI fully comprehends the context and intent before proceeding.
+  </Accordion>
+  <Accordion title="Retrieves relevant facts timely">
+    Hybrid search across multiple sources ensures accurate, up-to-date information.
+  </Accordion>
+  <Accordion title="Uses targeted agents effectively">
+    Specialized micro-agents handle specific extraction and follow-up tasks.
+  </Accordion>
+  <Accordion title="Applies rules consistently">
+    Guardrails and style guides ensure every response meets your standards.
+  </Accordion>
+  <Accordion title="Self-checks before sending">
+    Reflection and validation catch issues before messages reach customers.
+  </Accordion>
+</AccordionGroup>
+
+The Response Flow Pipeline provides transparent reasoning and dependable output for critical communication channels.

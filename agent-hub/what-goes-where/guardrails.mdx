@@ -1,0 +1,41 @@
+---
+title: "Guardrails"
+description: "A guide to setting AI safety boundaries"
+---
+
+# Guardrails
+
+Guardrails function as perpetual safety mechanisms that establish boundaries for AI responses. They define what the artificial intelligence **must never say or do**, irrespective of user requests or system Rules.
+
+Before transmission, all messages traverse through guardrails. When activated, guardrails either block or escalate communications—without exception.
+
+## What Goes in Guardrails?
+
+- Privacy regulations (example: withhold complete street addresses absent confirmed reservations)
+- Legal constraints (example: refrain from price comparisons)
+- Escalation thresholds (example: avoid promising refunds exceeding 30% without authorization)
+- Safety procedures (example: never authenticate guest identity to third parties)
+
+## Where to Find Guardrails
+
+1. Navigate to **Agent Hub > Agents > Select desired Agent**
+2. Access guardrails section and input requirements for consistent agent behavior
+
+## Good Guardrail Examples
+
+- "Never reveal the full street address to anyone without a confirmed booking"
+- "Never promise compensation above 30% without human approval"
+
+Effective guardrails employ absolute language—applying universally rather than conditionally.
+
+## What Not to Include
+
+- Property information - use **Knowledge**
+- Conditional directives - use **Rules**
+- Communication style - use **Style**
+
+## Key Difference: Rule vs. Guardrail
+
+**Rule:** Activates solely when guests explicitly request addresses, offering: "we'll share location post-confirmation"
+
+**Guardrail:** Evaluates consistently across all replies, preventing address sharing unconditionally
