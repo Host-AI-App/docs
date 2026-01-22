@@ -18,6 +18,7 @@
             "pages": [
               "index",
               "setting-up-conduit/set-up-your-workspace",
+              "setting-up-conduit/cross-workspace-domain-management",
               "setting-up-conduit/inbox-contacts",
               "setting-up-conduit/custom-fields"
             ]
