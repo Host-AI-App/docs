@@ -1,0 +1,61 @@
+---
+title: "Metrics"
+description: "Understanding how Conduit calculates your team's performance metrics"
+---
+
+## Overview
+
+Conduit tracks key performance metrics to help you understand how your team and AI are handling customer conversations. This guide explains how these metrics are calculated.
+
+## Response Time
+
+Response time measures the duration between when a customer message arrives and when a reply is sent. This metric helps you understand how quickly your team is responding to customers.
+
+### How It's Calculated
+
+- **Attribution:** Response time is attributed to whoever sends the reply, not who the conversation is assigned to
+- **Median calculation:** The dashboard shows the median response time across all replies in the selected time period
+- **Exclusions:** Response times over 48 hours are excluded from the calculation to prevent outliers from skewing results
+
+### Common Scenarios
+
+| Scenario | Who gets the response time? |
+|----------|----------------------------|
+| Staff A replies to Staff B's conversation | Staff A's response time is counted |
+| Multiple people reply to an unassigned conversation | Each person gets their own response time recorded for their reply |
+
+### Things to Keep in Mind
+
+- **Quick responders:** Someone who frequently jumps in to quickly handle others' conversations will naturally have a lower median response time
+- **Complex conversations:** Team members who handle more complex conversations requiring research or investigation may have a higher median response time
+
+Response time reflects who actually responds, giving you accurate data about each team member's responsiveness.
+
+## Automation Rate
+
+Automation rate measures the percentage of incoming messages that are fully handled by AI without requiring human intervention.
+
+### How It's Calculated
+
+The automation rate is calculated as:
+
+**Messages handled by AI / Total incoming messages**
+
+A message is considered "handled by AI" when the AI successfully responds to the customer without escalating to a human team member. Messages that result in escalations (where AI needs human help) are not counted as automated.
+
+### What Counts as an Escalation
+
+The AI escalates a conversation when:
+- A topic is marked as urgent
+- The AI needs confirmation or authorization to complete an action
+- There isn't enough information to provide an adequate response
+- The message contains attachments the AI can't process
+
+### Improving Your Automation Rate
+
+To increase your automation rate:
+- Add more knowledge to your AI agent about common questions
+- Create procedures for repetitive tasks
+- Review escalation patterns to identify gaps in AI training
+
+For more details on escalation types and how to address them, see the [AI Automation Dashboard](/dashboard/ai-automation-dashboard).

@@ -68,7 +68,8 @@
             "group": "Dashboard",
             "pages": [
               "dashboard/ai-automation-dashboard",
-              "dashboard/calls-dashboard"
+              "dashboard/calls-dashboard",
+              "dashboard/metrics"
             ]
           },
           {
