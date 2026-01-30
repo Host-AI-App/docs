@@ -1,0 +1,167 @@
+---
+title: "PII Redaction"
+description: "Automatically detect and redact personally identifiable information (PII) from conversations before they reach AI models, ensuring customer data privacy and regulatory compliance."
+---
+
+## Overview
+
+Conduit's PII redaction system automatically detects and masks sensitive personal information in customer conversations before they are processed by AI models. This ensures that private data like phone numbers, email addresses, and social security numbers are never exposed to external AI services.
+
+When enabled, PII values are replaced with tokens (e.g., `[REDACTED_EMAIL_1]`) before being sent to AI, and then restored in the final response—maintaining conversation context while protecting sensitive data.
+
+## How It Works
+
+The PII redaction system uses a three-step process:
+
+1. **Detection** - Scans incoming messages for PII patterns using regex-based matching
+2. **Redaction** - Replaces detected PII with unique tokens (e.g., `[REDACTED_PHONE_1]`)
+3. **Restoration** - After AI processing, restores original values in the response
+
+This approach ensures AI models never see actual customer data while maintaining natural conversation flow.
+
+## Supported PII Types
+
+Conduit detects and redacts the following categories of personal information:
+
+| Category | Examples | What's Detected |
+|----------|----------|-----------------|
+| **Contact Information** | Emails, phone numbers, addresses, URLs | `john@example.com`, `+1 (555) 123-4567`, `123 Main Street` |
+| **Government Identifiers** | Social Security Numbers | `123-45-6789` |
+| **Financial Information** | Credit/debit card numbers | `4111-1111-1111-1111` |
+| **Person Name** | Individual names | Configurable per workspace |
+| **Date of Birth** | Birth dates | Configurable per workspace |
+| **Customer Account Number** | Account identifiers | Configurable per workspace |
+| **Security Credentials** | Passwords, PINs | Configurable per workspace |
+| **Health Information** | Medical IDs, healthcare data | Configurable per workspace |
+
+## Enabling PII Redaction
+
+### Workspace-Level Configuration
+
+1. Navigate to **Settings** > **Privacy**
+2. Toggle **PII Redaction** to enable
+3. Click **Configure** to customize which PII categories to redact
+
+When enabling or disabling PII redaction, the change applies to all AI-powered features in your workspace, including:
+
+- AI-assisted message responses
+- Phone call transcripts and summaries
+- Workflow automations
+- Knowledge base queries
+
+### Selecting PII Categories
+
+You can choose exactly which types of PII to redact:
+
+1. Click **Configure PII Types** in the privacy settings
+2. Select or deselect individual categories
+3. Use **Select All** or **Deselect All** for bulk changes
+4. Save your preferences
+
+<Note>
+By default, all PII categories are enabled when you turn on PII redaction. You can then customize which types to exclude based on your needs.
+</Note>
+
+## Detection Patterns
+
+### Contact Information
+
+**Email Addresses**
+- Standard format: `user@domain.com`
+- Obfuscated format: `user[dot]name[at]example[dot]com`
+
+**Phone Numbers**
+- International format: `+1 555-123-4567`
+- Various separators: `(555) 123-4567`, `555.123.4567`
+- Minimum 6 digits with optional country code
+
+**Street Addresses**
+- US-style addresses: `123 Main Street`, `456 Oak Ave`
+- Recognizes common suffixes: Street, St, Road, Rd, Avenue, Ave, Boulevard, Blvd, Drive, Dr, Lane, Ln, Court, Ct
+
+### Government Identifiers
+
+**Social Security Numbers**
+- Standard format: `XXX-XX-XXXX`
+
+### Financial Information
+
+**Credit/Debit Cards**
+- 13-16 digit card numbers
+- Various formats with spaces or dashes
+
+## Token Format
+
+Redacted values are replaced with descriptive tokens that indicate the type and sequence:
+
+```
+[REDACTED_EMAIL_1]
+[REDACTED_PHONE_2]
+[REDACTED_SSN_1]
+[REDACTED_CARD_1]
+[REDACTED_ADDRESS_1]
+```
+
+**Token Consistency**: The same PII value always produces the same token within a conversation. If a customer mentions their email twice, both instances become `[REDACTED_EMAIL_1]`, helping AI understand the relationship.
+
+## Integration Points
+
+PII redaction is automatically applied across all AI-powered features:
+
+### AI Message Responses
+Messages are redacted before being sent to AI models for generating responses. The AI sees tokens instead of actual values, then responses are restored with original data.
+
+### Phone Transcripts
+Call transcripts, summaries, and metadata are processed through PII redaction before storage and AI analysis.
+
+### Workflows
+Any workflow step that involves AI processing respects your PII redaction settings.
+
+### Knowledge Base
+Queries to your knowledge base are redacted before processing.
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Start with all categories enabled">
+    Begin with comprehensive protection, then selectively disable categories only if needed for your specific use case.
+  </Accordion>
+
+  <Accordion title="Test with sample conversations">
+    Before going live, test PII redaction with various message formats to ensure detection works as expected for your customer communication patterns.
+  </Accordion>
+
+  <Accordion title="Review AI responses">
+    Periodically review AI-generated responses to verify that PII is being properly restored and conversations remain natural.
+  </Accordion>
+
+  <Accordion title="Consider your compliance requirements">
+    Match your PII category selections to your industry's regulatory requirements (HIPAA, PCI-DSS, GDPR, etc.).
+  </Accordion>
+</AccordionGroup>
+
+## Limitations
+
+- **Language support**: Detection patterns are optimized for English language formats
+- **Custom patterns**: Currently, custom PII patterns cannot be added—only the built-in categories are available
+- **Person names**: Names require explicit category enablement and may not be automatically detected without additional context
+
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="Does PII redaction affect AI response quality?">
+    No. The AI receives contextual tokens that indicate relationships (same email referenced twice = same token), and original values are restored in the final response. Most customers see no difference in response quality.
+  </Accordion>
+
+  <Accordion title="Is redacted data stored anywhere?">
+    Token mappings are stored temporarily for response restoration, then discarded. Original PII values are never stored by AI processing systems.
+  </Accordion>
+
+  <Accordion title="Can I disable redaction for specific conversations?">
+    PII redaction is a workspace-wide setting. Individual conversations cannot bypass redaction when it's enabled.
+  </Accordion>
+
+  <Accordion title="What happens if redaction misses some PII?">
+    While the system catches most common PII formats, edge cases may occur. For highly sensitive environments, consider combining PII redaction with additional data handling policies.
+  </Accordion>
+</AccordionGroup>

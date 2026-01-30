@@ -65,6 +65,12 @@
             ]
           },
           {
+            "group": "Privacy & Security",
+            "pages": [
+              "privacy/pii-redaction"
+            ]
+          },
+          {
             "group": "Dashboard",
             "pages": [
               "dashboard/ai-automation-dashboard",
